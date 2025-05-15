@@ -82,6 +82,10 @@ document.addEventListener('DOMContentLoaded', () => {
             // Start processing frames
             startProcessing();
             
+            // Start FPS counter
+            lastFrameTime = performance.now();
+            fpsUpdateTimer = setInterval(updateFPS, 1000);
+            
             // Log successful webcam start
             addToProcessingLog('Webcam started successfully');
             
@@ -381,3 +385,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add initial log message
     addToProcessingLog('Face Anonymizer initialized and ready');
 });
+
+function updateFPS() {
+    const currentTime = performance.now();
+    const fps = Math.round(1000 / (currentTime - lastFrameTime));
+    processingFpsElement.textContent = fps;
+    lastFrameTime = currentTime;
+}

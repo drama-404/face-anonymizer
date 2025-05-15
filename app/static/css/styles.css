@@ -11,21 +11,23 @@ body {
 /* Video container styling */
 .video-container {
     position: relative;
-    width: 100%;
-    max-width: 640px;
+    width: 640px;
+    height: 480px;
     margin: 0 auto;
-    border: 1px solid #ddd;
-    background-color: #000;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
     border-radius: 4px;
     overflow: hidden;
 }
 
 .video-container video,
 .video-container canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 640px;
-    height: auto;
-    display: block;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Settings panel */
@@ -41,7 +43,7 @@ body {
 
 /* Statistics panel */
 .stats-container {
-    font-size: 14px;
+    font-size: 0.9rem;
 }
 
 .stats-container p {
@@ -49,13 +51,11 @@ body {
 }
 
 #processingLog {
-    height: 100px;
+    max-height: 150px;
     overflow-y: auto;
-    border: 1px solid #ddd;
     padding: 0.5rem;
-    margin-top: 1rem;
-    border-radius: 4px;
     background-color: #f8f9fa;
+    border-radius: 4px;
 }
 
 /* Upload result containers */
@@ -71,7 +71,7 @@ body {
 
 /* Progress bar for video upload */
 .progress {
-    height: 10px;
+    height: 0.5rem;
 }
 
 /* Tabs styling */
@@ -103,6 +103,12 @@ body {
     
     .btn-group button {
         flex: 1;
+    }
+
+    .video-container {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4/3;
     }
 }
 
@@ -138,4 +144,18 @@ body {
     border-radius: 4px;
     font-weight: 500;
     font-size: 14px;
+}
+
+/* Custom form styling */
+.form-range::-webkit-slider-thumb {
+    background: #0d6efd;
+}
+
+.form-range::-moz-range-thumb {
+    background: #0d6efd;
+}
+
+/* Tab styling */
+.nav-tabs .nav-link.active {
+    font-weight: 500;
 }
