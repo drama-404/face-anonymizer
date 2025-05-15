@@ -1,0 +1,23 @@
+# Face Anonymizer App Dependencies
+
+# FastAPI and server
+fastapi>=0.100.0
+uvicorn>=0.22.0
+python-multipart>=0.0.6
+jinja2>=3.1.2
+
+# Image/Video Processing
+opencv-python>=4.7.0
+numpy>=1.24.0
+
+# LangChain integration
+langchain>=0.0.200
+langchain-core>=0.1.0
+
+# For file handling and utilities
+python-dotenv>=1.0.0
+
+# Optional: For enhanced LangChain functionality
+# uncomment these if you want to use LLMs
+# openai>=0.27.0
+# langchain-openai>=0.0.2
